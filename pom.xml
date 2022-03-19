@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>dk.lockfuglsang</groupId>
 	<artifactId>XRayHunter</artifactId>
-	<version>1.2.4</version>
+	<version>1.2.5</version>
 	<name>CoreProtect XRay Hunter</name>
 
 	<properties>
@@ -42,7 +42,7 @@
 		<dependency>
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
-			<version>1.18.1-R0.1-SNAPSHOT</version>
+			<version>1.18.2-R0.1-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -53,7 +53,7 @@
 		<dependency>
 			<groupId>net.coreprotect</groupId>
 			<artifactId>coreprotect</artifactId>
-			<version>20.3</version>
+			<version>21.1</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
