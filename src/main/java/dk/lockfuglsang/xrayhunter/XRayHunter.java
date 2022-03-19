@@ -28,9 +28,11 @@ public class XRayHunter extends JavaPlugin {
 	public void onEnable() {
 		api = null;
 		final CoreProtectAPI coreProtectAPI = getCoreProtect();
+
 		if (coreProtectAPI == null) {
 			log.info("No valid CoreProtect plugin was found!");
 		}
+
 		try {
 			new Metrics(this, 3013);
 		} catch (final Exception e) {
@@ -44,9 +46,8 @@ public class XRayHunter extends JavaPlugin {
 	private CoreProtectAPI getCoreProtect() {
 		final Plugin plugin = getServer().getPluginManager().getPlugin("CoreProtect");
 		if (plugin instanceof CoreProtect && plugin.isEnabled()) {
-			final CoreProtect coreProtect = (CoreProtect) plugin;
-			final CoreProtectAPI api = coreProtect.getAPI();
-			if (api != null && api.APIVersion() >= 7 && CoreProtectHandler.getAdaptor() != null) {
+			final CoreProtectAPI api = ((CoreProtect) plugin).getAPI();
+			if (api != null && api.APIVersion() >= 9 && CoreProtectHandler.getAdaptor() != null) {
 				return api;
 			}
 		}

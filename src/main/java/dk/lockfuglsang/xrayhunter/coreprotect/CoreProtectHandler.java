@@ -3,7 +3,6 @@ package dk.lockfuglsang.xrayhunter.coreprotect;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,9 +23,6 @@ public class CoreProtectHandler {
 	public static final int ACTION_BREAK = 0;
 	public static final int ACTION_PLACE = 1;
 	private static final Logger log = Logger.getLogger(CoreProtectHandler.class.getName());
-	private static final List<CoreProtectAdaptor> adaptors = Arrays.<CoreProtectAdaptor>asList(
-			new CoreProtectAdaptor_20_1()
-			);
 
 	public static void performLookup(final Plugin plugin, final CommandSender sender, final int stime, final List<Material> restrictBlocks, final List<Integer> excludeBlocks, final Callback callback) {
 		Bukkit.getScheduler().runTaskAsynchronously(plugin, (Runnable) () -> {
@@ -51,11 +47,12 @@ public class CoreProtectHandler {
 	}
 
 	public static CoreProtectAdaptor getAdaptor() {
-		for (final CoreProtectAdaptor adaptor : adaptors) {
-			if (adaptor.isAvailable()) {
-				return adaptor;
-			}
+		final CoreProtectAdaptor adaptor = new CoreProtectAdaptor_20_1();
+
+		if (adaptor.isAvailable()) {
+			return adaptor;
 		}
+
 		return null;
 	}
 }

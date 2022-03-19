@@ -50,6 +50,7 @@ public class AbstractCoreProtectAdaptor {
 		}
 	}
 
+
 	protected boolean isVersionLaterThan(String version, String otherVersion) {
 		final Pattern versionPattern = Pattern.compile("v?(?<major>[0-9]+)\\.(?<minor>[0-9]+).*");
 		final Matcher m1 = versionPattern.matcher(version);
@@ -59,6 +60,7 @@ public class AbstractCoreProtectAdaptor {
 			final int major2 = Integer.parseInt(m2.group("major"), 10);
 			final int minor1 = Integer.parseInt(m1.group("minor"), 10);
 			final int minor2 = Integer.parseInt(m1.group("minor"), 10);
+
 			return major1 >= major2 || major1 == major2 && minor1 >= minor2;
 		}
 		return false;
