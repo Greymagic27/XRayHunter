@@ -22,7 +22,7 @@ public class CoreProtectHandler {
     public static final int ACTION_PLACE = 1;
     private static final Logger log = Logger.getLogger(CoreProtectHandler.class.getName());
 
-    public static void performLookup(final Plugin plugin, final CommandSender sender, final int stime, final List<Material> restrictBlocks, final List<Integer> excludeBlocks, final Callback callback) {
+    public static void performLookup(final Plugin plugin, final CommandSender sender, final int stime, final List<Material> restrictBlocks, final Callback callback) {
         Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
             try (Connection connection = Database.getConnection(true); Statement statement = connection.createStatement()) {
                 final List<Integer> action_list = new ArrayList<>();

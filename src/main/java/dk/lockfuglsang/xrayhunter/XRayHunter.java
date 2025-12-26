@@ -1,7 +1,6 @@
 package dk.lockfuglsang.xrayhunter;
 
 import dk.lockfuglsang.xrayhunter.command.MainCommand;
-import dk.lockfuglsang.xrayhunter.coreprotect.CoreProtectHandler;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -48,7 +47,11 @@ public class XRayHunter extends JavaPlugin {
                 if (!(pluginCP instanceof CoreProtect)) return null;
                 CoreProtectAPI CoreProtect = ((CoreProtect) pluginCP).getAPI();
                 if (!CoreProtect.isEnabled()) return null;
-                if (api != null && api.APIVersion() >= 9 && CoreProtectHandler.getAdaptor() != null) return api;
+                int apiVersion = CoreProtect.APIVersion();
+                return switch (apiVersion) {
+                    case 7, 8, 9, 10, 11 -> CoreProtect;
+                    default -> null;
+                };
             }
         }
         return null;

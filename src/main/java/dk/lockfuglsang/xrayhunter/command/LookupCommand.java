@@ -44,9 +44,9 @@ class LookupCommand extends AbstractCommand {
             }
 
             if (player.getWorld().getEnvironment() == World.Environment.NETHER) {
-                CoreProtectHandler.performLookup(plugin, sender, TimeUtil.millisAsSeconds(millis), PlayerStatsComparatorNether.MATS, null, new LookupCallback(sender));
+                CoreProtectHandler.performLookup(plugin, sender, TimeUtil.millisAsSeconds(millis), PlayerStatsComparatorNether.MATS, new LookupCallback(sender));
             } else {
-                CoreProtectHandler.performLookup(plugin, sender, TimeUtil.millisAsSeconds(millis), PlayerStatsComparator.MATS, null, new LookupCallback(sender));
+                CoreProtectHandler.performLookup(plugin, sender, TimeUtil.millisAsSeconds(millis), PlayerStatsComparator.MATS, new LookupCallback(sender));
             }
 
             return true;

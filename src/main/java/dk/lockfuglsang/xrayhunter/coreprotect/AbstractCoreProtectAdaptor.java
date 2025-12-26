@@ -8,7 +8,7 @@ import org.bukkit.Material;
 import org.jspecify.annotations.NonNull;
 
 /**
- * Common code accross CoreProtect versions.
+ * Common code across CoreProtect versions.
  */
 @SuppressWarnings("unused")
 public class AbstractCoreProtectAdaptor {

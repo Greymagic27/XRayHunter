@@ -28,20 +28,16 @@ public class OreVein {
      * Returns true, if the ore can be part of this find.
      *
      * @param ore
-     * @return
      */
     @SuppressWarnings("deprecation")
-    public boolean add(CoreProtectAPI.ParseResult ore) {
+    public void add(CoreProtectAPI.ParseResult ore) {
         if (find.isEmpty()) {
             time = ore.getTime();
             worldName = ore.worldName();
             find.add(ore);
-            return true;
         } else if (isValid(ore)) {
             find.add(ore);
-            return true;
         }
-        return false;
     }
 
     /**

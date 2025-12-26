@@ -21,5 +21,5 @@ use [this](https://www.spigotmc.org/resources/xrayhunter.6225/).
 * [CoreProtect](https://www.spigotmc.org/resources/coreprotect.8631/)
 
 XRayHunter is a plugin created by R4zorax. I have been maintaining it for a few years for my own purposes, but I think
-XRayHunter is a very good tool so I think it should be available to everyone. R4zorax has given me permission to do
+XRayHunter is a very good tool, so I think it should be available to everyone. R4zorax has given me permission to do
 this. His original work can be found [here](https://github.com/rlf/XRayHunter).
